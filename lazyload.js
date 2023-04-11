@@ -57,8 +57,8 @@ const PNG_DIFF_FILENAME = 'page_diff.png';
 // iphone x user agent
 // const USER_AGENT = 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1';
 // default user Agent
-const USER_AGENT =
-  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36';
+// const USER_AGENT =
+//   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36';
 // Google Bot user Agent
 const CRAWLER_USER_AGENT =
   'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Googlebot/2.1; +http://www.google.com/bot.html) Chrome/W.X.Y.Z Safari/537.36';
@@ -153,7 +153,7 @@ const argv = require('yargs')
     //   });
     // });
 
-    await page.setUserAgent(argv.useBot ? USER_AGENT : CRAWLER_USER_AGENT);
+    await page.setUserAgent(argv.useBot ? '' : CRAWLER_USER_AGENT);
     await page.goto(url, { waitUntil: 'networkidle2' });
 
     const buffer = await page.screenshot({
@@ -169,7 +169,8 @@ const argv = require('yargs')
     const context = await browser.createIncognitoBrowserContext();
 
     const page = await context.newPage();
-    await page.setUserAgent(argv.useBot ? USER_AGENT : CRAWLER_USER_AGENT);
+
+    await page.setUserAgent(argv.useBot ? '' : CRAWLER_USER_AGENT);
     await page.goto(url, { waitUntil: 'networkidle2' });
 
     await page.evaluate(() => {
