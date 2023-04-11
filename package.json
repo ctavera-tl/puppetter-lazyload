@@ -1,0 +1,25 @@
+{
+  "name": "puppetter-lazyload",
+  "version": "1.0.0",
+  "description": "Verifies that components/images on the page which are lazy loaded do not use scroll",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ctavera-tl/puppetter-lazyload.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ctavera-tl/puppetter-lazyload/issues"
+  },
+  "homepage": "https://github.com/ctavera-tl/puppetter-lazyload#readme",
+  "dependencies": {
+    "pixel-diff": "^1.0.1",
+    "pngjs": "^7.0.0",
+    "puppeteer": "^19.8.5",
+    "resize-img": "^1.1.2"
+  }
+}
